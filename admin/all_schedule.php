@@ -17,7 +17,68 @@
 							</button></span>
 					</div>
 					<div class="card-body">
-						
+						<?php
+						$host       = "localhost";
+						$username   = "root";
+						$password   = "";
+						$database   = "scheduling_db";
+
+						// select database
+						$connect = mysqli_connect($host, $username, $password, $database);
+						//data untuk current minggu date for one week
+						$isnin = date('Y/m/d', strtotime("monday this week"));
+						$jumaat = date('Y/m/d', strtotime("friday this week"));
+
+						$monday = date('d/m/Y', strtotime("monday this week"));
+						$tuesday = date('d/m/Y', strtotime("tuesday this week"));
+						$wednesday = date('d/m/Y', strtotime("wednesday this week"));
+						$thursday = date('d/m/Y', strtotime("thursday this week"));
+						$friday = date('d/m/Y', strtotime("friday this week"));
+
+						$query = ("SELECT * FROM `schedules` WHERE `schedule_date` BETWEEN '$isnin' AND '$jumaat' ORDER BY `faculty_id` DESC, `schedule_date` ASC");
+						$result = mysqli_query($connect, $query);
+						$query2 = ("SELECT * FROM `faculty` ORDER BY `id` DESC;");
+						$result2 = mysqli_query($connect, $query2);
+						//for one week
+						$day = date('w');
+						echo "<div class='container'>
+							<table width='' class='table table-hover' border='0.9'>
+								<tr class='info'>
+									<th>Nama</th>";
+						echo "<th>Isnin <br>" . $monday . "</th>";
+						echo "<th>Selasa <br>" . $tuesday . "</th>";
+						echo "<th>Rabu <br>" . $wednesday . "</th>";
+						echo "<th>Khamis <br>" . $thursday . "</th>";
+						echo "<th>Jumaat <br>" . $friday . "</th>";
+						echo "
+								</tr>";
+
+						// $nameCount = 0;
+						// while ($row = mysqli_fetch_array($result)) {
+						// 	if ($row['faculty_id'] != $name) {
+						// 		if ($nameCount == 0) {
+						// 			$name = $row['faculty_id'];
+						// 			$nameCount = 0;
+						// 			// echo "</tr>";
+						// 		}
+						// 	}
+						// }
+						echo "<tr>";
+						while ($row = mysqli_fetch_array($result2)) {
+							echo "<tr>";
+							echo "<td>" . $row['lastname'] . "<td>";
+							$id = $row['id'];
+							while ($row2 = mysqli_fetch_array($result)) {
+								if ($row2['faculty_id'] == $id){
+									echo "<td>" . $row2['title'];
+								}
+								else {
+									break;
+								}
+							}
+						}
+
+						?>
 					</div>
 				</div>
 			</div>
