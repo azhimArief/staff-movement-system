@@ -49,7 +49,7 @@ header("location:index.php?page=home");
 		background:#59b6ec61;
 		display: flex;
 		align-items: center;
-		background: url(assets/uploads/<?php echo $_SESSION['system']['cover_img'] ?>);
+		background: url(assets/img/bg1.png);
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	}

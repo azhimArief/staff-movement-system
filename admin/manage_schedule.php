@@ -61,17 +61,17 @@ if (isset($_GET['id'])) {
 						<label for="" class="control-label">Lokasi</label>
 						<textarea class="form-control" name="location" cols="30" rows="3"><?php echo isset($location) ? $location : '' ?></textarea>
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="1" id="is_repeating" name="is_repeating" <?php echo isset($is_repeating) && $is_repeating != 1 ? '' : 'checked' ?>>
 							<label class="form-check-label" for="type">
 								Mingguan Jadual
 							</label>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-md-6">
-					<div class="form-group for-repeating">
+					<!-- <div class="form-group for-repeating">
 						<label for="dow" class="control-label">Days of Week</label>
 						<select name="dow[]" id="dow" class="custom-select select2" multiple="multiple">
 							<?php
@@ -89,8 +89,8 @@ if (isset($_GET['id'])) {
 					<div class="form-group for-repeating">
 						<label for="" class="control-label">Bulan Akhir</label>
 						<input type="month" name="month_to" id="month_to" class="form-control" value="<?php echo isset($end) ? date("Y-m", strtotime($end)) : '' ?>">
-					</div>
-					<div class="form-group for-nonrepeating" style="display: none">
+					</div> -->
+					<div class="form-group for-nonrepeating" style=>
 						<label for="" class="control-label">Tarikh *</label>
 						<input type="date" name="schedule_date" id="schedule_date" class="form-control" value="<?php echo isset($schedule_date) ? $schedule_date : '' ?>">
 					</div>
