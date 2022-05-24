@@ -16,6 +16,6 @@ if (isset($_GET['id'])) {
 $result = mysqli_query($link,   $sql);
 if ($result) {
     echo '<script type="text/javascript">
-            location="http://localhost/Testing/admin/index.php?page=schedule";
+            location="index.php?page=schedule";
         </script>';
 }

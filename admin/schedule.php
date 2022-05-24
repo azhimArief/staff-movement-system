@@ -17,7 +17,7 @@
 							</button></span>
 						
 						<span class="float:right"><button class="btn btn-secondary btn-block btn-sm col-sm-3 float-right" id="new_schedule">
-								<i class="fa fa-plus"></i><a href="http://localhost/Testing/admin/index.php?page=all_schedule" style="text-decoration:none; color:white;"> Jadual Staf Minggu Ini</a> 
+								<i class="fa fa-plus"></i><a href="index.php?page=all_schedule" style="text-decoration:none; color:white;"> Jadual Staf Minggu Ini</a> 
 							</button></span>
 					</div>
 					<div class="card-body">

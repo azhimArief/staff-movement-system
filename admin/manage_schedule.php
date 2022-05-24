@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 					<div class="form-group">
 						<label for="" class="control-label">Nama Staf *</label>
 						<select name="faculty_id" id="" class="custom-select select2">
-							<option value="0">All</option>
+							<option value="0">-</option>
 							<?php
 							$faculty = $conn->query("SELECT *,concat(lastname,', ',firstname,' ',middlename) as name FROM faculty order by concat(lastname,', ',firstname,' ',middlename) asc");
 							while ($row = $faculty->fetch_array()) :

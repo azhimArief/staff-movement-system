@@ -47,19 +47,8 @@
 						echo "<th>Rabu <br>" . date('d/m/Y', strtotime("wednesday this week")) . "</th>";
 						echo "<th>Khamis <br>" . date('d/m/Y', strtotime("thursday this week")) . "</th>";
 						echo "<th>Jumaat <br>" . date('d/m/Y', strtotime("friday this week")) . "</th>";
-						echo "
-								</tr>";
-
-						// $nameCount = 0;
-						// while ($row = mysqli_fetch_array($result)) {
-						// 	if ($row['faculty_id'] != $name) {
-						// 		if ($nameCount == 0) {
-						// 			$name = $row['faculty_id'];
-						// 			$nameCount = 0;
-						// 			// echo "</tr>";
-						// 		}
-						// 	}
-						// }
+						echo "</tr>";
+						
 						echo "<tr>";
 						$id = "";
 						$query2 = ("SELECT * FROM `faculty` ORDER BY `id` DESC;");
