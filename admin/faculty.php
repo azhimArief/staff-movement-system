@@ -47,6 +47,7 @@
 									<th class="text-center">#</th>
 									<th class="">IC No</th>
 									<th class="">Nama</th>
+									<th class="">Unit</th>
 									<th class="text-center">Tindakan</th>
 								</tr>
 							</thead>
@@ -65,6 +66,10 @@
 									</td>
 									<td class="">
 										 <p><b><?php echo ucwords($row['name']) ?></b></p>
+										 
+									</td>
+									<td class="">
+										 <p><b><?php echo ucwords($row['unit']) ?></b></p>
 										 
 									</td>
 									<td class="text-center">

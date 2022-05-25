@@ -31,7 +31,8 @@ if (isset($_GET['id'])) {
 					</div>
 					<div class="form-group">
 						<label for="" class="control-label">Nama Staf</label>
-						<h6><?php session_start(); echo $_SESSION['login_name']; ?></h6>
+						<h6><?php session_start();
+							echo $_SESSION['login_name']; ?></h6>
 						<input type="hidden" name="faculty_id" value="<?php echo $_SESSION['login_id']; ?>">
 						<!-- <select name="faculty_id" id="" class="custom-select select2">
 							<option value="0">All</option>
@@ -44,22 +45,34 @@ if (isset($_GET['id'])) {
 						</select> -->
 					</div>
 					<div class="form-group">
-						<label for="" class="control-label">Tajuk Aktiviti *</label>
-						<textarea class="form-control" name="title" cols="30" rows="3"><?php echo isset($title) ? $title : '' ?></textarea>
+						<input type="hidden" name="schedule_type" value="3">
+						<label for="" class="control-label">Jenis Aktiviti *</label>
+						<select name="schedule_type" id="" class="custom-select">
+							<option value="1">Ada</option>
+							<option value="2">Mesyuarat</option>
+							<option value="3">Tugas Luar</option>
+							<option value="4">Kursus</option>
+							<option value="5">Cuti</option>
+							<option value="6">Lain-Lain</option>
+						</select>
 					</div>
 					<div class="form-group">
+						<label for="" class="control-label">Catatan Aktiviti *</label>
+						<textarea class="form-control" name="title" cols="30" rows="3"><?php echo isset($title) ? $title : '' ?></textarea>
+					</div>
+					<!-- <div class="form-group">
 						<input type="hidden" name="schedule_type" value="3">
-						<!-- <label for="" class="control-label">Schedule Type</label>
+						<label for="" class="control-label">Schedule Type</label>
 						<select name="schedule_type" id="" class="custom-select">
 							<option value="1" <?php echo isset($schedule_type) && $schedule_type == 1 ? 'selected' : ''  ?>>Class</option>
 							<option value="2" <?php echo isset($schedule_type) && $schedule_type == 2 ? 'selected' : ''  ?>>Meeting</option>
 							<option value="3" <?php echo isset($schedule_type) && $schedule_type == 3 ? 'selected' : ''  ?>>Others</option>
-						</select> -->
-					</div>
-					<div class="form-group">
-						<label for="" class="control-label">Maklumat Tambahan</label>
+						</select>
+					</div> -->
+					<!-- <div class="form-group">
+						<label for="" class="control-label">Maklumat Aktiviti</label>
 						<textarea class="form-control" name="description" cols="30" rows="3"><?php echo isset($description) ? $description : '' ?></textarea>
-					</div>
+					</div> -->
 					<div class="form-group">
 						<label for="" class="control-label">Lokasi</label>
 						<textarea class="form-control" name="location" cols="30" rows="3"><?php echo isset($location) ? $location : '' ?></textarea>

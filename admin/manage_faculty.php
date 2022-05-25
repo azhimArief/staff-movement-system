@@ -24,6 +24,17 @@ if (isset($_GET['id'])) {
 				<input type="text" name="lastname" class="form-control" value="<?php echo isset($lastname) ? $lastname : '' ?>" required>
 			</div>
 		</div>
+		<div class="row form-group">
+			<div class="col-md-4">
+				<label class="control-label"> Unit</label>
+				<select name="unit" required="" class="custom-select" id="">
+					<option value="">-</option>
+					<option <?php echo isset($unit) && $unit == 'PDSA' ? 'selected' : '' ?>>PDSA</option>
+					<option <?php echo isset($unit) && $unit == 'Test' ? 'selected' : '' ?>>Test</option>
+					<option <?php echo isset($unit) && $unit == 'Intern' ? 'selected' : '' ?>>Intern</option>
+				</select>
+			</div>
+		</div>
 		<!-- <div class="row form-group">
 			<div class="col-md-4">
 				<label class="control-label">Email</label>
