@@ -74,34 +74,119 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "<tr>";
     echo "<td>" . $row['lastname'] . "<td>";
     $id = $row['id'];
-    $monday = "-";
-    $tuesday = "-";
-    $wednesday = "-";
-    $thursday = "-";
-    $friday = "-";
+    $monday = "ada";
+    $tuesday = "ada";
+    $wednesday = "ada";
+    $thursday = "ada";
+    $friday = "ada";
     $query = ("SELECT * FROM `schedules` WHERE `faculty_id`= '$id' ORDER BY `faculty_id` DESC, `schedule_date` ASC");
     $result = mysqli_query($connect, $query);
+    $bgc1 = "";
+    $bgc2 = "";
+    $bgc3 = "";
+    $bgc4 = "";
+    $bgc5 = "";
+    $c1 = "";
+    $c2 = "";
+    $c3 = "";
+    $c4 = "";
+    $c5 = "";
     while ($row2 = mysqli_fetch_array($result)) {
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("monday this week"))) {
             $monday = $row2['title'];
+            if ($monday == 'Cuti') {
+                $bgc1 = 'black';
+                $c1 = 'white';
+            } else if ($monday == 'Mesyuarat') {
+                $bgc1 = 'orange';
+                $c1 = 'black';
+            } else if ($monday == 'Tugas Luar') {
+                $bgc1 = 'blue';
+                $c1 = 'white';
+            } else if ($monday == 'Kursus') {
+                $bgc1 = 'red';
+                $c1 = 'white';
+            } else {
+                $bgc1 = 'white';
+            }
         }
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("tuesday this week"))) {
             $tuesday = $row2['title'];
+            if ($tuesday == 'Cuti') {
+                $bgc2 = 'black';
+                $c2 = 'white';
+            } else if ($tuesday == 'Mesyuarat') {
+                $bgc2 = 'orange';
+                $c2 = 'white';
+            } else if ($tuesday == 'Tugas Luar') {
+                $bgc2 = 'blue';
+                $c2 = 'white';
+            } else if ($tuesday == 'Kursus') {
+                $bgc2 = 'red';
+                $c2 = 'white';
+            } else {
+                $bgc2 = 'white';
+            }
         }
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("wednesday this week"))) {
             $wednesday = $row2['title'];
+            if ($wednesday == 'Cuti') {
+                $bgc3 = 'black';
+                $c3 = 'white';
+            } else if ($wednesday == 'Mesyuarat') {
+                $bgc3 = 'orange';
+                $c3 = 'black';
+            } else if ($wednesday == 'Tugas Luar') {
+                $bgc3 = 'blue';
+                $c3 = 'white';
+            } else if ($wednesday == 'Kursus') {
+                $bgc3 = 'red';
+                $c3 = 'white';
+            } else {
+                $bgc3 = 'white';
+            }
         }
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("thursday this week"))) {
             $thursday = $row2['title'];
+            if ($thursday == 'Cuti') {
+                $bgc4 = 'black';
+                $c4 = 'white';
+            } else if ($thursday == 'Mesyuarat') {
+                $bgc4 = 'orange';
+                $c4 = 'black';
+            } else if ($thursday == 'Tugas Luar') {
+                $bgc4 = 'blue';
+                $c4 = 'white';
+            } else if ($thursday == 'Kursus') {
+                $bgc4 = 'red';
+                $c4 = 'white';
+            } else {
+                $bgc4 = 'white';
+            }
         }
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("friday this week"))) {
             $friday = $row2['title'];
+            if ($friday == 'Cuti') {
+                $bgc5 = 'black';
+                $c5 = 'white';
+            } else if ($friday == 'Mesyuarat') {
+                $bgc5 = 'orange';
+                $c5 = 'black';
+            } else if ($friday == 'Tugas Luar') {
+                $bgc5 = 'blue';
+                $c5 = 'white';
+            } else if ($friday == 'Kursus') {
+                $bgc5 = 'red';
+                $c5 = 'white';
+            } else {
+                $bgc5 = 'white';
+            }
         }
     }
-    echo "<td>" . $monday . "</td>";
-    echo "<td>" . $tuesday . "</td>";
-    echo "<td>" . $wednesday . "</td>";
-    echo "<td>" . $thursday . "</td>";
-    echo "<td>" . $friday . "</td>";
+    echo "<td style='background-color:$bgc1; color:$c1'>" . $monday . "</td>";
+    echo "<td style='background-color:$bgc2; color:$c2'>" . $tuesday . "</td>";
+    echo "<td style='background-color:$bgc3; color:$c3'>" . $wednesday . "</td>";
+    echo "<td style='background-color:$bgc4; color:$c4'>" . $thursday . "</td>";
+    echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
     echo "</tr>";
 }

@@ -47,18 +47,23 @@ if (isset($_GET['id'])) {
 					<div class="form-group">
 						<input type="hidden" name="schedule_type" value="3">
 						<label for="" class="control-label">Jenis Aktiviti *</label>
-						<select name="schedule_type" id="" class="custom-select">
-							<option value="1">Ada</option>
-							<option value="2">Mesyuarat</option>
-							<option value="3">Tugas Luar</option>
-							<option value="4">Kursus</option>
-							<option value="5">Cuti</option>
-							<option value="6">Lain-Lain</option>
+						<select name="title" id="" class="custom-select">
+							<option <?php echo isset($title) && $title == 'Ada' ? 'selected' : '' ?>>Ada</option>
+							<option <?php echo isset($title) && $title == 'Mesyuarat' ? 'selected' : '' ?>>Mesyuarat</option>
+							<option <?php echo isset($title) && $title == 'Tugas Luar' ? 'selected' : '' ?>>Tugas Luar</option>
+							<option <?php echo isset($title) && $title == 'Kursus' ? 'selected' : '' ?>>Kursus</option>
+							<option <?php echo isset($title) && $title == 'Cuti' ? 'selected' : '' ?>>Cuti</option>
+							<option <?php echo isset($title) && $title == 'Lain-Lain' ? 'selected' : '' ?>>Lain-Lain</option>
+							<!-- <option value="Mesyuarat">Mesyuarat</option>
+							<option value="Tugas Luar">Tugas Luar</option>
+							<option value="Kursus">Kursus</option>
+							<option value="Cuti">Cuti</option>
+							<option value="Lain-Lain">Lain-Lain</option> -->
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="" class="control-label">Catatan Aktiviti *</label>
-						<textarea class="form-control" name="title" cols="30" rows="3"><?php echo isset($title) ? $title : '' ?></textarea>
+						<textarea class="form-control" name="description" cols="30" rows="3"><?php echo isset($description) ? $description : '' ?></textarea>
 					</div>
 					<!-- <div class="form-group">
 						<input type="hidden" name="schedule_type" value="3">
