@@ -74,11 +74,11 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "<tr>";
     echo "<td>" . $row['lastname'] . "<td>";
     $id = $row['id'];
-    $monday = "ada";
-    $tuesday = "ada";
-    $wednesday = "ada";
-    $thursday = "ada";
-    $friday = "ada";
+    $monday = "Ada";
+    $tuesday = "Ada";
+    $wednesday = "Ada";
+    $thursday = "Ada";
+    $friday = "Ada";
     $query = ("SELECT * FROM `schedules` WHERE `faculty_id`= '$id' ORDER BY `faculty_id` DESC, `schedule_date` ASC");
     $result = mysqli_query($connect, $query);
     $bgc1 = "";

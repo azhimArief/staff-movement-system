@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<small>* Perlu diisi</small>
+						<small><b>* Perlu diisi</b></small>
 					</div>
 					<div class="form-group">
 						<label for="" class="control-label">Nama Staf</label>
