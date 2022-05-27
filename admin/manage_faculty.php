@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 		<div class="row form-group">
 			<div class="col-md-4">
 				<label class="control-label">ID No.</label>
-				<input type="text" name="id_no" class="form-control" value="<?php echo isset($id_no) ? $id_no : '' ?>">
+				<input type="text" placeholder="Tanpa -" name="id_no" class="form-control" value="<?php echo isset($id_no) ? $id_no : '' ?>">
 			</div>
 		</div>
 		<div class="row form-group">
@@ -29,9 +29,9 @@ if (isset($_GET['id'])) {
 				<label class="control-label"> Unit</label>
 				<select name="unit" required="" class="custom-select" id="">
 					<option value="">-</option>
-					<option <?php echo isset($unit) && $unit == 'PDSA' ? 'selected' : '' ?>>PDSA</option>
-					<option <?php echo isset($unit) && $unit == 'Test' ? 'selected' : '' ?>>Test</option>
-					<option <?php echo isset($unit) && $unit == 'Intern' ? 'selected' : '' ?>>Intern</option>
+					<option <?php echo isset($unit) && $unit == 'ICT' ? 'selected' : '' ?>>ICT</option>
+					<option <?php echo isset($unit) && $unit == 'INFRA' ? 'selected' : '' ?>>INFRA</option>
+					<option <?php echo isset($unit) && $unit == 'PMO & DRC' ? 'selected' : '' ?>>PMO & DRC</option>
 				</select>
 			</div>
 		</div>

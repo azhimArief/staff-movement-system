@@ -22,32 +22,32 @@ $jumaat = date('Y/m/d', strtotime("friday this week"));
 if (isset($_POST['filter'])) {
     $unit = $_POST['unit'];
     if ($unit == 'PDSA') {
-        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit'";
+        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf PDSA Minggu Ini</b></center>';
     }
     if ($unit == 'Intern') {
-        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit'";
+        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Intern Minggu Ini</b></center>';
     }
     if ($unit == 'Test') {
-        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit'";
+        $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Test Minggu Ini</b></center>';
     }
     if ($unit == '*') {
-        $query2 = "SELECT * FROM `faculty` ORDER BY `id` DESC";
+        $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
     }
     if ($unit == '') {
-        $query2 = "SELECT * FROM `faculty` ORDER BY `id` DESC";
+        $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
     }
 } else {
-    $query2 = ("SELECT * FROM `faculty` ORDER BY `id` DESC;");
+    $query2 = ("SELECT * FROM `faculty` ORDER BY `id` asc;");
     $result2 = mysqli_query($connect, $query2);
     echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
 }
