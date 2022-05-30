@@ -16,7 +16,7 @@ ob_end_flush();
 
 	<?php include('./header.php'); ?>
 	<?php
-	if (isset($_SESSION['adminLogin_id']))
+	if (isset($_SESSION['adminXLogin_id']))
 		header("location:index.php?page=home");
 
 	?>
@@ -94,7 +94,7 @@ ob_end_flush();
 		<div id="login-right">
 			<div class="card col-md-8">
 				<div class="card-body">
-					<caption><b>Admin System</b></caption>
+					<caption><b>Admin Executive</b></caption>
 					<form id="login-form">
 						<div class="form-group">
 							<label for="username" class="control-label">Username</label>

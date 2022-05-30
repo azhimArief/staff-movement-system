@@ -54,6 +54,9 @@ ob_end_flush();
 						</div>
 						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Log In</button></center>
 					</form>
+					<a href="admin/login.php">Admin System</a>
+					<br>
+					<a href="adminX/login.php">Admin Executive</a>
 				</div>
 			</div>
 		</div>

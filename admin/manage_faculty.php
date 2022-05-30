@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
 		<div class="row form-group">
 			<div class="col-md-4">
 				<label class="control-label"> Nama</label>
-				<input type="text" name="lastname" class="form-control" value="<?php echo isset($lastname) ? $lastname : '' ?>" required>
+				<input type="text" name="lastname" class="form-control" value="<?php echo isset($lastname) ? strtoupper($lastname) : '' ?>" required>
 			</div>
 		</div>
 		<div class="row form-group">
