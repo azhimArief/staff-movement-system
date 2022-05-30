@@ -11,24 +11,25 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class=" col-md-4">
-							<form method="POST" action="">
-								<b>Pilih Unit :</b>
-								<select name="unit" id="unit" class="">
-									<option value="" name=""></option>
-									<option value="*" name="All">All</option>
-									<option value="PDSA">PDSA</option>
-									<option value="Intern">Intern</option>
-									<option value="Test">Test</option>
-								</select>
-								<button class="" name="filter">Filter</button>
-							</form>
-						</div>
 
-						<!-- <center><b>Jadual Semua Staf Minggu Ini</b></center> -->
-						<span class="float:right"><button class="btn btn-primary btn-block btn-sm col-sm-2 float-right" id="new_schedule">
-								<i class="fa fa-plus"></i> Tambah Jadual
-							</button></span>
+						<form method="POST" action="">
+							<b>Pilih Unit :</b>
+							<select name="unit" id="unit" class="">
+								<option value="" name=""></option>
+								<option value="*" name="All">All</option>
+								<option value="ICT">ICT</option>
+								<option value="INFRA">INFRA</option>
+								<option value="PMO & DRC">PMO & DRC</option>
+							</select>
+							<button class="" name="filter">Filter</button>
+
+							<span class="float:right"><button class="btn btn-primary btn-block btn-sm col-sm-2 float-right" id="new_schedule">
+									<i class="fa fa-plus"></i> Tambah Jadual
+								</button></span>
+						</form>
+
+
+
 					</div>
 					<div class="card-body">
 						<?php

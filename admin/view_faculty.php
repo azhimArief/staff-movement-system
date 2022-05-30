@@ -11,6 +11,7 @@ if(isset($_GET['id'])){
 <div class="container-fluid">
 	<p>Name: <b><?php echo ucwords($name) ?></b></p>
 	<p>IC No: </i> <b><?php echo $id_no ?></b></p>
+	<p>Unit: </i> <b><?php echo $unit ?></b></p>
 	<hr class="divider">
 </div>
 <div class="modal-footer display">

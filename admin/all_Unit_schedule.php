@@ -21,17 +21,17 @@ $jumaat = date('Y/m/d', strtotime("friday this week"));
 
 if (isset($_POST['filter'])) {
     $unit = $_POST['unit'];
-    if ($unit == 'PDSA') {
+    if ($unit == 'ICT') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf PDSA Minggu Ini</b></center>';
+        echo '<center><b>Jadual Semua Staf ICT Minggu Ini</b></center>';
     }
-    if ($unit == 'Intern') {
+    if ($unit == 'INFRA') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Intern Minggu Ini</b></center>';
     }
-    if ($unit == 'Test') {
+    if ($unit == 'PMO & DRC') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Test Minggu Ini</b></center>';
@@ -56,7 +56,7 @@ $day = date('w');
 echo "<div class='container'>
 
 <br>
-    <table width='' class='table table-hover' border='0.9'>
+    <table width='' class='table table-striped' border='0   .9'>
         <tr class='info'>
             <th>Nama</th>";
 echo "<th></th>";
