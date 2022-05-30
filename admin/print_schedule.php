@@ -1,6 +1,9 @@
 <?php
+include('header.php');
 // session_start()
 // $_SESSION['unit'] = '*'; 
+
+
 
 $host       = "localhost";
 $username   = "root";
@@ -53,10 +56,10 @@ if (isset($_POST['filter'])) {
 }
 //for one week
 $day = date('w');
-echo "<div class='container'>
+echo "<div class='print'>
 
 <br>
-    <table width='' class='table table-striped' border='0.9'>
+    <table width='' class='table table-striped print' border='0.9'>
         <tr class='info'>
             <th>Nama</th>";
 echo "<th></th>";
@@ -92,7 +95,7 @@ while ($row = mysqli_fetch_array($result2)) {
     $c4 = "";
     $c5 = "";
     $num = 1;
-    ${"num".$num} = 1;
+    ${"num" . $num} = 1;
     while ($row2 = mysqli_fetch_array($result)) {
         $num = $row2['id'];
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("monday this week"))) {
@@ -199,15 +202,20 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
     echo "</tr>";
 }
-  echo "<div class='text-center'>
-  <a href='print_schedule.php' class='btn btn-primary'>Print</a>
+echo "<div class='text-center'>
+  <button onclick='printDiv('print')' class='btn btn-primary' id='print-btn'>Print</button>
 </div>";
 ?>
+
 <script>
-    $(document).ready(function() {
-        $('table').dataTable()
-    })
-    $('.view_schedule').click(function() {
-        uni_modal("Maklumat Jadual", "view_schedule.php?id=" + $(this).attr('data-id'), '')
-    })
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
 </script>
