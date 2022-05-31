@@ -198,6 +198,10 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "</tr>";
 }
 
+echo "<div class='text-center'>
+  <a href='print_schedule.php' class='btn btn-primary'>Print</a>
+</div><br>";
+
 ?>
 <script>
     $(document).ready(function() {

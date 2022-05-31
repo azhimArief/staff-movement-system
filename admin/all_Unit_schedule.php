@@ -1,6 +1,7 @@
 <?php
 // session_start()
 // $_SESSION['unit'] = '*'; 
+$unit = '';
 
 $host       = "localhost";
 $username   = "root";
@@ -21,35 +22,78 @@ $jumaat = date('Y/m/d', strtotime("friday this week"));
 
 if (isset($_POST['filter'])) {
     $unit = $_POST['unit'];
+
     if ($unit == 'ICT') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf ICT Minggu Ini</b></center>';
+        echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
     }
     if ($unit == 'INFRA') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Intern Minggu Ini</b></center>';
+        echo '<center><b>Jadual Semua Staf Infra Minggu Ini</b></center>';
+        echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
     }
     if ($unit == 'PMO & DRC') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Test Minggu Ini</b></center>';
+        echo '<center><b>Jadual Semua Staf PMO & DRC Minggu Ini</b></center>';
+        echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
     }
     if ($unit == '*') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
     }
     if ($unit == '') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
     }
 } else {
     $query2 = ("SELECT * FROM `faculty` ORDER BY `id` asc;");
     $result2 = mysqli_query($connect, $query2);
     echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+    echo "<div class='text-center'>
+        <br>
+    <form action='print_schedule.php' method='POST'>
+        <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
+        <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
+  </form>
+</div>";
 }
 //for one week
 $day = date('w');
@@ -92,7 +136,7 @@ while ($row = mysqli_fetch_array($result2)) {
     $c4 = "";
     $c5 = "";
     $num = 1;
-    ${"num".$num} = 1;
+    ${"num" . $num} = 1;
     while ($row2 = mysqli_fetch_array($result)) {
         $num = $row2['id'];
         if ($row2['schedule_date'] === date('Y-m-d', strtotime("monday this week"))) {
@@ -199,9 +243,18 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
     echo "</tr>";
 }
-  echo "<div class='text-center'>
-  <a href='print_schedule.php' class='btn btn-primary'>Print</a>
-</div>";
+// echo "<div class='text-center'>
+//   <a href='print_schedule.php' class='btn btn-primary'>Print</a>
+//   <input type='hidden' id='printData' value='" . $_POST['unit'] . "'>
+// </div><br>";
+
+// echo "<div class='text-center'>
+//     <form action='' method='POST'>
+//         <a href='print_schedule.php' class='btn btn-primary' name='print'>Print</a>
+//         <input type='hidden' id='printData' name='printData' value='" . $_POST['unit'] . "'>
+//   </form>
+// </div><br>";
+
 ?>
 <script>
     $(document).ready(function() {
@@ -210,4 +263,10 @@ while ($row = mysqli_fetch_array($result2)) {
     $('.view_schedule').click(function() {
         uni_modal("Maklumat Jadual", "view_schedule.php?id=" + $(this).attr('data-id'), '')
     })
+</script>
+
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
 </script>

@@ -32,8 +32,8 @@ $jumaat = date('Y/m/d', strtotime("friday this week"));
 // $thursday = date('d/m/Y', strtotime("thursday this week"));
 // $friday = date('d/m/Y', strtotime("friday this week"));
 
-if (isset($_POST['print'])) {
-    $unit = $_POST['printData'];
+if (isset($_POST['filter'])) {
+    $unit = $_POST['unit'];
     if ($unit == 'ICT') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
@@ -42,12 +42,12 @@ if (isset($_POST['print'])) {
     if ($unit == 'INFRA') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Infra Minggu Ini</b></center>';
+        echo '<center><b>Jadual Semua Staf Intern Minggu Ini</b></center>';
     }
     if ($unit == 'PMO & DRC') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf PMO & DRC Minggu Ini</b></center>';
+        echo '<center><b>Jadual Semua Staf Test Minggu Ini</b></center>';
     }
     if ($unit == '*') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
