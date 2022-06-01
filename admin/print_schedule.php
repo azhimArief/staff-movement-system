@@ -202,18 +202,18 @@ while ($row = mysqli_fetch_array($result2)) {
 
     // echo "<td style='background-color:$bgc1; color:$c1'>  <button class='view_schedule' 
     // type='button' data-id='" . $num . "'>" . $monday . "</button></td>";
-    echo "<td style='background-color:$bgc1; color:$c1'>" . $monday . "</td>";
+    echo "<td>" . $monday . "</td>";
     //echo "<td style='background-color:$bgc2; color:$c2'>  <button class='view_schedule' 
     //type='button' data-id='" . $num . "'>" . $tuesday . "</button></td>";
-    echo "<td style='background-color:$bgc2; color:$c2'>" . $tuesday . "</td>";
+    echo "<td>" . $tuesday . "</td>";
     //
-    echo "<td style='background-color:$bgc3; color:$c3'>" . $wednesday . "</td>";
-    echo "<td style='background-color:$bgc4; color:$c4'>" . $thursday . "</td>";
-    echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
+    echo "<td>" . $wednesday . "</td>";
+    echo "<td>" . $thursday . "</td>";
+    echo "<td>" . $friday . "</td>";
     echo "</tr>";
 }
 echo "<div class='text-center'>
-  <button onclick='window.print();' class='btn btn-primary' id='print'>Print</button>
+  <button onclick='window.print()' class='btn btn-primary' id='print'>Print</button>
 </div>
 <br>";
 ?>

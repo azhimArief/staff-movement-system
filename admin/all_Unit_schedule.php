@@ -29,7 +29,7 @@ if (isset($_POST['filter'])) {
         echo '<center><b>Jadual Semua Staf ICT Minggu Ini</b></center>';
         echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
@@ -41,7 +41,7 @@ if (isset($_POST['filter'])) {
         echo '<center><b>Jadual Semua Staf Infra Minggu Ini</b></center>';
         echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
@@ -53,7 +53,7 @@ if (isset($_POST['filter'])) {
         echo '<center><b>Jadual Semua Staf PMO & DRC Minggu Ini</b></center>';
         echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
@@ -65,7 +65,7 @@ if (isset($_POST['filter'])) {
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
         echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
@@ -77,7 +77,7 @@ if (isset($_POST['filter'])) {
         echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
         echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
@@ -89,7 +89,7 @@ if (isset($_POST['filter'])) {
     echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
     echo "<div class='text-center'>
         <br>
-    <form action='print_schedule.php' method='POST'>
+    <form action='print_schedule.php' target='_blank' method='POST'>
         <input type='submit' value='Print Jadual' class='btn btn-primary' name='print' />
         <input type='hidden' id='printData' name='printData' value='" . $unit . "'>
   </form>
