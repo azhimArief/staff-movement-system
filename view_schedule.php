@@ -10,10 +10,10 @@ if(isset($_GET['id'])){
 ?>
 <div class="container-fluid">
 	<p>Aktiviti: <b><?php echo ucwords($title) ?></b></p>
-	<p>Maklumat Tambahan: <b><?php echo $description ?></b></p>
-	<p>Lokasi: </i> <b><?php echo $location ?></b></p>
-	<p>Masa Bermula: </i> <b><?php echo date('h:i A',strtotime("2020-01-01 ".$time_from)) ?></b></p>
-	<p>Masa Tamat: </i> <b><?php echo date('h:i A',strtotime("2020-01-01 ".$time_to)) ?></b></p>
+	<p>Catatan Aktiviti: <b><?php echo $description ?></b></p>
+	<!-- <p>Lokasi: </i> <b><?php echo $location ?></b></p> -->
+	<p id='time_from'>Masa Bermula: </i> <b><?php echo date('h:i A',strtotime("2020-01-01 ".$time_from)) ?></b></p>
+	<p id='time_to'>Masa Tamat: </i> <b><?php echo date('h:i A',strtotime("2020-01-01 ".$time_to)) ?></b></p>
 	<hr class="divider">
 </div>
 <div class="modal-footer display">
@@ -36,9 +36,17 @@ if(isset($_GET['id'])){
 		display: block;
 	}
 </style>
+
+<script>
+	if ('<?php echo ($title) ?>' == 'Cuti'){
+		document.getElementById('time_from').style.display = 'none';
+		document.getElementById('time_to').style.display = 'none';
+	}
+</script>
+
 <script>
 	$('#edit').click(function(){
-		uni_modal('Edit Schedule','manage_schedule.php?id=<?php echo $id ?>','mid-large')
+		uni_modal('Edit Jadual','manage_schedule.php?id=<?php echo $id ?>','mid-large')
 	})
 	// $('#delete_schedule').click(function(){
 	// 	_conf("Are you sure to delete this schedule?","delete_schedule",[$(this).attr('data-id')])

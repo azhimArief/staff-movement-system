@@ -74,10 +74,10 @@ if (isset($_GET['id'])) {
 						<label for="" class="control-label">Maklumat Tambahan</label>
 						<textarea class="form-control" name="description" cols="30" rows="3"><?php echo isset($description) ? $description : '' ?></textarea>
 					</div> -->
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="" class="control-label">Lokasi</label>
 						<textarea class="form-control" name="location" cols="30" rows="3"><?php echo isset($location) ? $location : '' ?></textarea>
-					</div>
+					</div> -->
 					<!-- <div class="form-group">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="1" id="is_repeating" name="is_repeating" <?php echo isset($is_repeating) && $is_repeating != 1 ? '' : 'checked' ?>>
@@ -111,11 +111,11 @@ if (isset($_GET['id'])) {
 						<label for="" class="control-label">Tarikh *</label>
 						<input type="date" name="schedule_date" id="schedule_date" class="form-control" value="<?php echo isset($schedule_date) ? $schedule_date : '' ?>">
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="time_from">
 						<label for="" class="control-label">Waktu Bermula</label>
 						<input type="time" name="time_from" id="time_from" class="form-control" value="<?php echo isset($time_from) ? $time_from : '' ?>">
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="time_to">
 						<label for="" class="control-label">Waktu Akhiri</label>
 						<input type="time" name="time_to" id="time_to" class="form-control" value="<?php echo isset($time_to) ? $time_to : '' ?>">
 					</div>
@@ -127,6 +127,14 @@ if (isset($_GET['id'])) {
 <div class="imgF" style="display: none " id="img-clone">
 	<span class="rem badge badge-primary" onclick="rem_func($(this))"><i class="fa fa-times"></i></span>
 </div>
+
+<script>
+	if ('<?php echo ($title) ?>' == 'Cuti'){
+		document.getElementById('time_from').style.display = 'none';
+		document.getElementById('time_to').style.display = 'none';
+	}
+</script>
+
 <script>
 	if ('<?php echo isset($id) ? 1 : 0 ?>' == 1) {
 		if ($('#is_repeating').prop('checked') == true) {

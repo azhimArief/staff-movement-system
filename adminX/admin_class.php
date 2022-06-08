@@ -341,7 +341,7 @@ Class Action {
 		$data .= ", title = '$title' ";
 		$data .= ", schedule_type = '$schedule_type' ";
 		$data .= ", description = '$description' ";
-		$data .= ", location = '$location' ";
+		//$data .= ", location = '$location' ";
 		if(isset($is_repeating)){
 			$data .= ", is_repeating = '$is_repeating' ";
 			$rdata = array('dow'=>implode(',', $dow),'start'=>$month_from.'-01','end'=>(date('Y-m-d',strtotime($month_to .'-01 +1 month - 1 day '))));
