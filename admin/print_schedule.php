@@ -12,8 +12,7 @@
 
 <?php
 include('header.php');
-
-
+include('db_connect.php');
 
 $host       = "localhost";
 $username   = "root";
@@ -23,8 +22,8 @@ $database   = "scheduling_db";
 // select database
 $connect = mysqli_connect($host, $username, $password, $database);
 //data untuk current minggu date for one week
-$isnin = date('Y/m/d', strtotime("monday this week"));
-$jumaat = date('Y/m/d', strtotime("friday this week"));
+$isnin = date('d/m', strtotime("monday this week"));
+$jumaat = date('d/m', strtotime("friday this week"));
 
 // $monday = date('d/m/Y', strtotime("monday this week"));
 // $tuesday = date('d/m/Y', strtotime("tuesday this week"));
@@ -37,32 +36,38 @@ if (isset($_POST['print'])) {
     if ($unit == 'ICT') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf ICT Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf ICT</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == 'INFRA') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Infra Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf Infra</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == 'PMO & DRC') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf PMO & DRC Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf PMO & DRC</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == '*') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == '') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
 } else {
     $query2 = ("SELECT * FROM `faculty` ORDER BY `id` asc;");
     $result2 = mysqli_query($connect, $query2);
-    echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+    echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+    echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
 }
 //for one week
 $day = date('w');
@@ -213,7 +218,7 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "</tr>";
 }
 echo "<div class='text-center'>
-  <button onclick='window.print()' class='btn btn-primary' id='print'>Print</button>
+  <button onclick='window.print()' class='btn btn-primary' id='print'><i class='fa fa-print'></i> Print</button>
 </div>
 <br>";
 ?>
