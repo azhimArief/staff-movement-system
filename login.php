@@ -35,6 +35,8 @@ ob_end_flush();
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background: url(admin/assets/img/bg2.png);
+		background-size: cover;
 	}
 </style>
 
@@ -48,9 +50,10 @@ ob_end_flush();
 
 					<form id="login-form">
 						<h4><b>PDSA Sistem Pergerakan Pegawai</b></h4>
+						<h6>Login Staf</h6>
 						<div class="form-group">
-							<label for="id_no" class="control-label">Sila masukkan IC No anda.</label>
-							<input type="text" id="id_no" name="id_no" class="form-control" placeholder="Tanpa ( - )">
+							<!-- <label for="id_no" class="control-label">Sila masukkan IC No anda.</label> -->
+							<input type="text" id="id_no" name="id_no" class="form-control" placeholder=" Sila masukkan IC No anda. Tanpa ( - )">
 						</div>
 						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Log In</button></center>
 					</form>
