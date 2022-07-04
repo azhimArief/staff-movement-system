@@ -12,8 +12,7 @@
 
 <?php
 include('header.php');
-
-
+include('db_connect.php');
 
 $host       = "localhost";
 $username   = "root";
@@ -23,8 +22,8 @@ $database   = "scheduling_db";
 // select database
 $connect = mysqli_connect($host, $username, $password, $database);
 //data untuk current minggu date for one week
-$isnin = date('Y/m/d', strtotime("monday this week"));
-$jumaat = date('Y/m/d', strtotime("friday this week"));
+$isnin = date('d/m', strtotime("monday this week"));
+$jumaat = date('d/m', strtotime("friday this week"));
 
 // $monday = date('d/m/Y', strtotime("monday this week"));
 // $tuesday = date('d/m/Y', strtotime("tuesday this week"));
@@ -37,32 +36,38 @@ if (isset($_POST['print'])) {
     if ($unit == 'ICT') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf ICT Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf ICT</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == 'INFRA') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Infra Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf Infra</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == 'PMO & DRC') {
         $query2 = "SELECT * FROM `faculty` WHERE `unit`='$unit' ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf PMO & DRC Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf PMO & DRC</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == '*') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
     if ($unit == '') {
         $query2 = "SELECT * FROM `faculty` ORDER BY `id` ASC";
         $result2 = mysqli_query($connect, $query2);
-        echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+        echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+        echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
     }
 } else {
     $query2 = ("SELECT * FROM `faculty` ORDER BY `id` asc;");
     $result2 = mysqli_query($connect, $query2);
-    echo '<center><b>Jadual Semua Staf Minggu Ini</b></center>';
+    echo '<h3><center><b>Jadual Semua Staf</b></center></h3>';
+    echo '<center><b>Tarikh ' . $isnin . ' - ' . $jumaat . '</b></center>';
 }
 //for one week
 $day = date('w');
@@ -202,18 +207,18 @@ while ($row = mysqli_fetch_array($result2)) {
 
     // echo "<td style='background-color:$bgc1; color:$c1'>  <button class='view_schedule' 
     // type='button' data-id='" . $num . "'>" . $monday . "</button></td>";
-    echo "<td style='background-color:$bgc1; color:$c1'>" . $monday . "</td>";
+    echo "<td>" . $monday . "</td>";
     //echo "<td style='background-color:$bgc2; color:$c2'>  <button class='view_schedule' 
     //type='button' data-id='" . $num . "'>" . $tuesday . "</button></td>";
-    echo "<td style='background-color:$bgc2; color:$c2'>" . $tuesday . "</td>";
+    echo "<td>" . $tuesday . "</td>";
     //
-    echo "<td style='background-color:$bgc3; color:$c3'>" . $wednesday . "</td>";
-    echo "<td style='background-color:$bgc4; color:$c4'>" . $thursday . "</td>";
-    echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
+    echo "<td>" . $wednesday . "</td>";
+    echo "<td>" . $thursday . "</td>";
+    echo "<td>" . $friday . "</td>";
     echo "</tr>";
 }
 echo "<div class='text-center'>
-  <button onclick='window.print();' class='btn btn-primary' id='print'>Print</button>
+  <button onclick='window.print()' class='btn btn-primary' id='print'><i class='fa fa-print'></i> Print</button>
 </div>
 <br>";
 ?>
