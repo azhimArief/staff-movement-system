@@ -11,6 +11,7 @@
 
 
   <?php
+  //check session
   if (!isset($_SESSION['login_id']))
     header('location:login.php');
   include('./header.php');
@@ -78,7 +79,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            <!-- <b>Jadual</b> -->
+            <!-- Tambah Jadual -->
             <span class="float:right"><button class="btn btn-primary btn-block btn-sm col-sm-2 float-right" id="new_schedule">
                 <i class="fa fa-plus"></i> Tambah Jadual
               </button></span>

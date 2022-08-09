@@ -11,35 +11,27 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<b>Jadual Staf</b>
+
+						<form method="POST" action="">
+							<b>Pilih Unit :</b>
+							<select name="unit" id="unit" class="">
+								<option value="" name=""></option>
+								<option value="*" name="All">All</option>
+								<option value="ICT">ICT</option>
+								<option value="INFRA">INFRA</option>
+								<option value="PMO & DRC">PMO & DRC</option>
+							</select>
+							<button class="" name="filter">Filter</button>
+						</form>
 						<span class="float:right"><button class="btn btn-primary btn-block btn-sm col-sm-2 float-right" id="new_schedule">
 								<i class="fa fa-plus"></i> Tambah Jadual
 							</button></span>
 
-						<span class="float:right"><button class="btn btn-secondary btn-block btn-sm col-sm-3 float-right" id="new_schedule">
-								<i class="fa fa-list-alt"></i><a href="index.php?page=all_schedule" style="text-decoration:none; color:white;"> Jadual Staf Minggu Ini</a>
-							</button></span>
-						<!-- <span class="float:right"><button class="btn btn-secondary btn-block btn-sm col-sm-3 float-right" id="new_schedule">
-								<i class="fa fa-list-alt"></i><a href="index.php?page=all_Unit1" style="text-decoration:none; color:white;"> Testing</a>
-							</button></span> -->
 					</div>
 					<div class="card-body">
-						<div class="row">
-							<label for="" class="control-label col-md-2 offset-md-2">Lihat jadual :</label>
-							<div class=" col-md-4">
-								<select name="faculty_id" id="faculty_id" class="custom-select select2">
-									<option value=""></option>
-									<?php
-									$faculty = $conn->query("SELECT *,concat(lastname) as name FROM faculty order by concat(lastname) asc");
-									while ($row = $faculty->fetch_array()) :
-									?>
-										<option value="<?php echo $row['id'] ?>"><?php echo ucwords($row['name']) ?></option>
-									<?php endwhile; ?>
-								</select>
-							</div>
-						</div>
-						<hr>
-						<div id="calendar"></div>
+						<?php
+						include 'all_Unit2.php';
+						?>
 					</div>
 				</div>
 			</div>

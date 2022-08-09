@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
 </style>
 
 <script>
-	if ('<?php echo ($title) ?>' == 'Cuti'){
+	if ('<?php echo ($title) ?>' == 'Cuti') {
 		document.getElementById('time_from').style.display = 'none';
 		document.getElementById('time_to').style.display = 'none';
 	}
