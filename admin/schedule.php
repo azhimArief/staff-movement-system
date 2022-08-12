@@ -1,4 +1,7 @@
-<?php include('db_connect.php'); ?>
+<?php
+//PAGE CALENDAR TNGOK JADUAL STAF
+include('db_connect.php');
+?>
 <div class="container-fluid">
 
 	<div class="col-lg-12">
@@ -19,9 +22,6 @@
 						<span class="float:right"><button class="btn btn-secondary btn-block btn-sm col-sm-3 float-right" id="new_schedule">
 								<i class="fa fa-list-alt"></i><a href="index.php?page=all_schedule" style="text-decoration:none; color:white;"> Jadual Staf Minggu Ini</a>
 							</button></span>
-						<!-- <span class="float:right"><button class="btn btn-secondary btn-block btn-sm col-sm-3 float-right" id="new_schedule">
-								<i class="fa fa-list-alt"></i><a href="index.php?page=all_Unit1" style="text-decoration:none; color:white;"> Testing</a>
-							</button></span> -->
 					</div>
 					<div class="card-body">
 						<div class="row">
@@ -43,7 +43,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Table Panel -->
 		</div>
 	</div>
 

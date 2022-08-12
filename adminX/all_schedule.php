@@ -7,11 +7,12 @@
 
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-
+						<!--UNTUK STRUKTUR PAGE JADUAL MINGGU INI. -->
 						<form method="POST" action="">
 							<b>Pilih Unit :</b>
 							<select name="unit" id="unit" class="">
@@ -30,6 +31,7 @@
 					</div>
 					<div class="card-body">
 						<?php
+						//PANGGIL UNTUK DISPLAY JADUAL
 						include 'all_Unit_schedule.php';
 						?>
 					</div>

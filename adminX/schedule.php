@@ -1,4 +1,6 @@
-<?php include('db_connect.php'); ?>
+<?php 
+//PAGE DISPLAY CALENDAR JADUAL
+include('db_connect.php'); ?>
 <div class="container-fluid">
 
 	<div class="col-lg-12">
@@ -40,7 +42,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Table Panel -->
 		</div>
 	</div>
 

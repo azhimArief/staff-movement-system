@@ -1,3 +1,6 @@
+<? 
+//PAGE UNTUK PRINT
+?>
 <style>
     @page {
         size: A4;
@@ -205,13 +208,8 @@ while ($row = mysqli_fetch_array($result2)) {
         }
     }
 
-    // echo "<td style='background-color:$bgc1; color:$c1'>  <button class='view_schedule' 
-    // type='button' data-id='" . $num . "'>" . $monday . "</button></td>";
     echo "<td>" . $monday . "</td>";
-    //echo "<td style='background-color:$bgc2; color:$c2'>  <button class='view_schedule' 
-    //type='button' data-id='" . $num . "'>" . $tuesday . "</button></td>";
     echo "<td>" . $tuesday . "</td>";
-    //
     echo "<td>" . $wednesday . "</td>";
     echo "<td>" . $thursday . "</td>";
     echo "<td>" . $friday . "</td>";

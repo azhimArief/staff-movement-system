@@ -1,4 +1,7 @@
-<?php include('db_connect.php'); ?>
+<?php
+//DISPLAY SEMUA STAF
+include('db_connect.php');
+?>
 
 <div class="container-fluid">
 	<style>
@@ -87,7 +90,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Table Panel -->
 		</div>
 	</div>
 

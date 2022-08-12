@@ -52,7 +52,6 @@ ob_end_flush();
 						<h4><b>PDSA Sistem Pergerakan Pegawai</b></h4>
 						<h6>Login Staf</h6>
 						<div class="form-group">
-							<!-- <label for="id_no" class="control-label">Sila masukkan IC No anda.</label> -->
 							<input type="text" id="id_no" name="id_no" class="form-control" placeholder=" Sila masukkan IC No anda. Tanpa ( - )">
 						</div>
 						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Log In</button></center>
@@ -72,6 +71,7 @@ ob_end_flush();
 
 </body>
 <script>
+	//SUBMIT FUNCTION TEMPLATE
 	$('#login-form').submit(function(e) {
 		e.preventDefault()
 		$('#login-form button[type="button"]').attr('disabled', true).html('Logging in...');

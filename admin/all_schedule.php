@@ -1,4 +1,6 @@
-<?php include('db_connect.php'); ?>
+<?php 
+//STRUKTUR UNTUK JADUAL SATU MINGGU
+include('db_connect.php'); ?>
 <div class="container-fluid">
 
 	<div class="col-lg-12">
@@ -30,6 +32,7 @@
 					</div>
 					<div class="card-body">
 						<?php
+						//PANGGIL UNTUK DISPLAY JADUAL SATU MINGGU
 						include 'all_Unit_schedule.php';
 						?>
 					</div>

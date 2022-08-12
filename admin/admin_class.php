@@ -1,4 +1,5 @@
 <?php
+//FUNCTIONS DARI TEMPLATE UNTUK INSERT, LOGIN, SAVE DAN SEBAGAINYA
 session_start();
 ini_set('display_errors', 1);
 Class Action {

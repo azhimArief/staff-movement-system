@@ -1,6 +1,5 @@
 <?php
-// session_start()
-// $_SESSION['unit'] = '*'; 
+//JADUAL UNTUK SEMINGGU
 $unit = '';
 
 $host       = "localhost";
@@ -170,7 +169,7 @@ while ($row = mysqli_fetch_array($result2)) {
                 $c2 = 'white';
             } else if ($tuesday == 'Mesyuarat') {
                 $bgc2 = 'orange';
-                $c2 = 'white';
+                $c2 = 'black';
             } else if ($tuesday == 'Tugas Luar') {
                 $bgc2 = 'blue';
                 $c2 = 'white';
@@ -237,11 +236,8 @@ while ($row = mysqli_fetch_array($result2)) {
         }
     }
 
-    // echo "<td style='background-color:$bgc1; color:$c1'>  <button class='view_schedule' 
-    // type='button' data-id='" . $num . "'>" . $monday . "</button></td>";
     echo "<td style='background-color:$bgc1; color:$c1'>" . $monday . "</td>";
-    //echo "<td style='background-color:$bgc2; color:$c2'>  <button class='view_schedule' 
-    //type='button' data-id='" . $num . "'>" . $tuesday . "</button></td>";
+
     echo "<td style='background-color:$bgc2; color:$c2'>" . $tuesday . "</td>";
     //
     echo "<td style='background-color:$bgc3; color:$c3'>" . $wednesday . "</td>";
@@ -249,17 +245,6 @@ while ($row = mysqli_fetch_array($result2)) {
     echo "<td style='background-color:$bgc5; color:$c5'>" . $friday . "</td>";
     echo "</tr>";
 }
-// echo "<div class='text-center'>
-//   <a href='print_schedule.php' class='btn btn-primary'>Print</a>
-//   <input type='hidden' id='printData' value='" . $_POST['unit'] . "'>
-// </div><br>";
-
-// echo "<div class='text-center'>
-//     <form action='' method='POST'>
-//         <a href='print_schedule.php' class='btn btn-primary' name='print'>Print</a>
-//         <input type='hidden' id='printData' name='printData' value='" . $_POST['unit'] . "'>
-//   </form>
-// </div><br>";
 
 ?>
 <script>

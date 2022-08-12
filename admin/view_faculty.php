@@ -1,4 +1,6 @@
-<?php include 'db_connect.php' ?>
+<?php 
+//UNTUK VIEW MAKLUMAT PENGGUNA
+include 'db_connect.php' ?>
 <?php
 if (isset($_GET['id'])) {
 	$qry = $conn->query("SELECT *,concat(lastname) as name FROM faculty where id=" . $_GET['id'])->fetch_array();

@@ -49,9 +49,7 @@ if (isset($_GET['id'])) {
 	$('#edit').click(function() {
 		uni_modal('Edit Jadual', 'manage_schedule.php?id=<?php echo $id ?>', 'mid-large')
 	})
-	// $('#delete_schedule').click(function(){
-	// 	_conf("Are you sure to delete this schedule?","delete_schedule",[$(this).attr('data-id')],'mid-large')
-	// })
+
 
 	function delete_schedule($id) {
 		start_load()

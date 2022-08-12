@@ -1,4 +1,7 @@
-<?php include 'db_connect.php' ?>
+<?php
+//EDIT AND TAMBAH STAF
+include 'db_connect.php' 
+?>
 <?php
 if (isset($_GET['id'])) {
 	$qry = $conn->query("SELECT * FROM faculty where id=" . $_GET['id'])->fetch_array();
@@ -35,6 +38,7 @@ if (isset($_GET['id'])) {
 				</select>
 			</div>
 		</div>
+		<!--DI BAWAH SEMUA OPTIONAL -->
 		<!-- <div class="row form-group">
 			<div class="col-md-4">
 				<label class="control-label">Email</label>

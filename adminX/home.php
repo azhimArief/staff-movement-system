@@ -68,10 +68,6 @@
                                     }
                                     ?>
                                 </div>
-                                <!-- <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div> -->
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
@@ -88,31 +84,44 @@
                                     }
                                     ?>
                                 </div>
-                                <!-- <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div> -->
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <!-- <div class="card bg-warning text-white mb-4">
+                            <div class="card bg-warning text-white mb-4">
                                 <div class="card-body">
-                                    Bilangan Staf - Staf Cuti
+                                    Bilangan Staf<br> Cuti
                                     <?php
+                                    $isnin = date('Y-d-m', strtotime("monday this week"));
+                                    $jumaat = date('Y-d-m', strtotime("friday this week"));
+                                    //Perlu buat untuk minggu kini. tak dapat
                                     $dash_test_query = "SELECT * from schedules WHERE title = 'Cuti'";
                                     $dash_test_query_run = mysqli_query($conn, $dash_test_query);
                                     if ($schedules_total = mysqli_num_rows($dash_test_query_run)) {
                                         echo '<h4 class="mb-0">' . $schedules_total . '</h4>';
                                     } else {
-                                        echo '<h4 class="mb-0">No Data</h4>';
+                                        echo '<h4 class="mb-0">0</h4>';
                                     }
                                     ?>
                                 </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div> -->
-                        </div>
+                            </div>
+                        </div> 
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">
+                                    Bilangan Staf <br> Tugas Luar
+                                    <?php
+                                    //Perlu buat untuk minggu kini tak dapat
+                                    $dash_test_query = "SELECT * from schedules WHERE title = 'Tugas Luar'";
+                                    $dash_test_query_run = mysqli_query($conn, $dash_test_query);
+                                    if ($schedules_total = mysqli_num_rows($dash_test_query_run)) {
+                                        echo '<h4 class="mb-0">' . $schedules_total . '</h4>';
+                                    } else {
+                                        echo '<h4 class="mb-0">0</h4>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
-
+<?
+//SIDEBAR PAGE
+?>
 <style>
 	.collapse a{
 		text-indent:10px;
@@ -14,7 +16,6 @@
 				<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>
 				<a href="index.php?page=schedule" class="nav-item nav-schedule"><span class='icon-field'><i class="fa fa-calendar-day"></i></span> Jadual</a>
 				<?php if($_SESSION['adminXLogin_type'] == 1): ?>
-				<!-- <a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a> -->
 			<?php endif; ?>
 		</div>
 
